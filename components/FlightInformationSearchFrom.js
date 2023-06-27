@@ -37,21 +37,20 @@ const FlightInformationSearchFrom = () => {
   const onSubmit = async ({ flightNumber, flightDate }) => {
     setError('');
     setLoading(true);
-    try
-    {
-      const response = await getData(`/api/flightUpdateSubscriber?flightNumber=${flightNumber}&flightDate=${flightDate}`);
-    
+    try {
+      const response = await getData(
+        `/api/flightUpdateSubscriber?flightNumber=${flightNumber}&flightDate=${flightDate}`
+      );
+
       if (!response.ok) {
         return setError(
           `${response.status} Something went wrong while fetching data. Please change search criteria or try again later`
         );
       }
-      
+
       const data = await response?.json();
       setTableData(data);
-    }
-    finally
-    {
+    } finally {
       setLoading(false);
     }
   };

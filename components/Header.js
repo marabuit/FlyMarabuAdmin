@@ -8,7 +8,7 @@ import LanguageSwitch from './LanguageSwitch';
 const Header = ({ title, root = '' }) => {
   const { t } = useTranslation('common');
 
-  const signOutUrl = "/.auth/logout?post_logout_redirect_uri=/"
+  const signOutUrl = '/.auth/logout?post_logout_redirect_uri=/';
 
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   useEffect(() => {
@@ -48,7 +48,9 @@ const Header = ({ title, root = '' }) => {
           <div>
             <LanguageSwitch />
           </div>
-          <a className="p-5" href={`${signOutUrl}`}>{t('SignOut')}</a>
+          <a className="p-5" href={`${signOutUrl}`}>
+            {t('SignOut')}
+          </a>
         </div>
         <div
           className={`absolute top-16 left-0 right-0 max-w-[1380px] bg-coal mx-auto lg:flex justify-between content-center w-full transition-all lg:static lg:translate-x-0 translate-x-[100%]`}
@@ -62,7 +64,9 @@ const Header = ({ title, root = '' }) => {
             <div>
               <LanguageSwitch />
             </div>
-            <a className="p-5"href={`${signOutUrl}`}>{t('SignOut')}</a>
+            <a className="p-5" href={`${signOutUrl}`}>
+              {t('SignOut')}
+            </a>
           </div>
         </div>
       </header>
